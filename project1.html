@@ -1,31 +1,147 @@
 <!DOCTYPE html>
+
 <html>
-<head>
+
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+
+<title>
+Rotating Square
+</title>
+
+
 <script id="vertex-shader" type="x-shader/x-vertex">
+
 attribute vec4 vPosition;
 
-void main()
+uniform float theta;
+
+
+void
+main()
+
 {
-  gl_Position = vPosition;
+ 
+   float s = sin( theta );
+   
+ float c = cos( theta );
+
+  
+  gl_Position.x = -s * vPosition.x + c * vPosition.y;
+ 
+   gl_Position.y =  s * vPosition.y + c * vPosition.x;
+  
+  gl_Position.z = 0.0;
+ 
+   gl_Position.w = 1.0;
 }
+
 </script>
+
 
 <script id="fragment-shader" type="x-shader/x-fragment">
+
+
 precision mediump float;
 
-void main()
+void
+main()
+
 {
-gl_FragColor = vec4( 1.0, 1.0, 1.0, 1.0 );
+    gl_FragColor = vec4( 1.0, 0.0, 0.0, 1.0 );
+}
+
+</script>
+
+
+
+<script type="text/javascript" src="../Common/webgl-utils.js">
+</script>
+
+<script type="text/javascript" src="../Common/initShaders.js">
+</script>
+
+<script type="text/javascript" src="../Common/MV.js">
+</script>
+
+<script type="text/javascript" src="project1.js">
+</script>
+
+<script type="text/javascript">
+function start_game() {
+	//document.getElementById('mainImage').src="index0.jpg".style.display = 'none';
+	document.getElementById('gl-canvas').style.display = 'inline';
+
 }
 </script>
-<script type="text/javascript" src="../Common/webgl-utils.js"></script>
-<script type="text/javascript" src="../Common/initShaders.js"></script>
-<script type="text/javascript" src="../Common/MV.js"></script>
-<script type="text/javascript" src="project1.js"></script>
-</head>
+</head>  
+ 
+
 <body>
-<canvas id="gl-canvas" width="512" height="512">
+
+
+<button id="Button3">
+3
+</button>
+
+
+<button id="Button4">
+4
+</button>
+
+
+<button id="Button5">
+5
+</button>
+
+
+<button id="Button6">
+6
+</button>
+
+
+<button id="Button7">
+7
+</button>
+
+
+<button id="Button8">
+8
+</button>
+
+
+<button id="Button9">
+9
+</button>
+
+
+<button id="Button10">
+10
+</button>
+
+<button id="startBtn" onclick="start_game()">Start</button>
+<h2>Dancing Quadrilaterals</h2>
+<img id="mainImage" src="cover.jpg"   style="width:512px;height:512px">
+
+
+
+<select id="Controls" size="3">
+ 
+   <option value="0">
+</option>
+    <option value="1">Easy Mode
+</option>
+    <option value="2">Difficult Mode
+</option>
+
+</select>
+
+
+<canvas id="gl-canvas" width="512" height="512" style="display:none;">
+
 Oops ... your browser doesn't support the HTML5 canvas element
+
 </canvas>
+
 </body>
+
 </html>
