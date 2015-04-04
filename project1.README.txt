@@ -1,3 +1,14 @@
-name, date, description
+name: Shandeepa Wickramasinghe
 
-be sure to include complete details of how to interact with your game, the scoring system, and how to win
+date:4/3/15
+
+description: To start the game we have to click on the start button and then have to count the number of vertices and submit
+the answer by clicking the specific button.. It is designed in the way that switch between the image and the canvas.
+Once we hit on the START button the image will be hidden and in case if we click on a wrong button then canvas will be disappear 
+and respective image file will load with the total. 
+There are 11 rotating quadrilaterals and rotating speed will be increased after each move.
+If we complete the game or submit any wrong answer then we have to refresh the page to play it again.
+Twelve jpg images are using for the project. (I was unable to upload the images to github, 
+so I sent an email to you with all image files from the email adderss sandimaya1@gmail.com)
+
+
